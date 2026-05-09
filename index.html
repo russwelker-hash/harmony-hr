@@ -553,10 +553,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   </div>
   <div class="header-right"><span class="role-badge rb-admin" title="Click to log out">👤 Admin</span>
     <button class="btn btn-success" onclick="saveAll()">💾 Save</button>
-    <span id="lastSavedLabel" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace"></span>
+    <span id="lastSavedLabel" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">✓ Saved 09/05/2026 13:15</span>
     <button class="btn" onclick="saveAsIndex()" title="Download as index.html for GitHub" style="background:var(--surface2);border:1px solid #24292f;color:#24292f;font-weight:700">📤 GitHub</button>
     <label class="btn btn-primary" style="cursor:pointer;">📂 Load<input type="file" accept=".json" onchange="loadAll(event)" style="display:none"></label>
-    <button class="btn btn-sm" id="policyBtn" onclick="showPolicy()" style="display:none">📋 Policy</button>
+    <button class="btn btn-sm" id="policyBtn" onclick="showPolicy()" style="display: none;">📋 Policy</button>
     <button class="btn btn-sm" id="settingsBtn" onclick="showSettings()" style="display: inline-block;" title="Admin Settings">⚙️ Settings</button>
     <button class="btn btn-sm" id="archiveBtn" onclick="loadArchiveFile()" title="Past Employees">👥 Past Employees</button>
     <button class="btn btn-sm" onclick="shareApp()" title="Share this app">🔗 Share</button>
@@ -577,35 +577,35 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 </div>
 
 <!-- TRAINING SUB-TABS (only shown for matrix) -->
-<div id="subTabsBar" class="sub-tabs" style="display:none">
-  <div class="sub-tab active" onclick="setSubTab('all',this)">All <span class="tab-badge" id="badge-all">150</span></div>
-  <div class="sub-tab" onclick="setSubTab('production',this)">Production <span class="tab-badge" id="badge-production">84</span></div>
+<div id="subTabsBar" class="sub-tabs" style="display: none;">
+  <div class="sub-tab active" onclick="setSubTab('all',this)">All <span class="tab-badge" id="badge-all">155</span></div>
+  <div class="sub-tab" onclick="setSubTab('production',this)">Production <span class="tab-badge" id="badge-production">89</span></div>
   <div class="sub-tab" style="border-left:1px solid var(--border);padding-left:16px;color:var(--border);cursor:default;flex-shrink:0">|</div>
-  <div class="sub-tab" onclick="setSubTab('Office',this)">Office <span class="tab-badge" id="badge-grp-0"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Process Tech',this)">Process Tech <span class="tab-badge" id="badge-grp-1"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Maintenance',this)">Maintenance <span class="tab-badge" id="badge-grp-2"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Quality',this)">Quality <span class="tab-badge" id="badge-grp-3"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Floor Support',this)">Floor Support <span class="tab-badge" id="badge-grp-4"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Production off line',this)">Production off line <span class="tab-badge" id="badge-grp-5"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Shipping/Receiving',this)">Shipping/Receiving <span class="tab-badge" id="badge-grp-6"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Supervisor',this)">Supervisor <span class="tab-badge" id="badge-grp-7"></span></div>
-  <div class="sub-tab" onclick="setSubTab('Janitorial',this)">Janitorial <span class="tab-badge" id="badge-grp-8"></span></div>
+  <div class="sub-tab" onclick="setSubTab('Office',this)">Office <span class="tab-badge" id="badge-grp-0">11</span></div>
+  <div class="sub-tab" onclick="setSubTab('Process Tech',this)">Process Tech <span class="tab-badge" id="badge-grp-1">10</span></div>
+  <div class="sub-tab" onclick="setSubTab('Maintenance',this)">Maintenance <span class="tab-badge" id="badge-grp-2">5</span></div>
+  <div class="sub-tab" onclick="setSubTab('Quality',this)">Quality <span class="tab-badge" id="badge-grp-3">5</span></div>
+  <div class="sub-tab" onclick="setSubTab('Floor Support',this)">Floor Support <span class="tab-badge" id="badge-grp-4">10</span></div>
+  <div class="sub-tab" onclick="setSubTab('Production off line',this)">Production off line <span class="tab-badge" id="badge-grp-5">18</span></div>
+  <div class="sub-tab" onclick="setSubTab('Shipping/Receiving',this)">Shipping/Receiving <span class="tab-badge" id="badge-grp-6">3</span></div>
+  <div class="sub-tab" onclick="setSubTab('Supervisor',this)">Supervisor <span class="tab-badge" id="badge-grp-7">3</span></div>
+  <div class="sub-tab" onclick="setSubTab('Janitorial',this)">Janitorial <span class="tab-badge" id="badge-grp-8">1</span></div>
 </div>
 
-<div class="toolbar" id="toolbarEl" style="display:none">
+<div class="toolbar" id="toolbarEl" style="display: none;">
   <button class="filter-btn active" onclick="setShift('all',this)">All Shifts</button>
   <button class="filter-btn s1" onclick="setShift('1',this)">Shift 1</button>
   <button class="filter-btn s2" onclick="setShift('2',this)">Shift 2</button>
   <button class="filter-btn s3" onclick="setShift('3',this)">Shift 3</button>
-  <button class="filter-btn flag" id="flagBtn" onclick="toggleFlag(this)" style="display:none">🚩 Flagged</button>
+  <button class="filter-btn flag" id="flagBtn" onclick="toggleFlag(this)" style="display: none;">🚩 Flagged</button>
   <input class="search-box" placeholder="Search name..." oninput="setSearch(this.value)" id="searchBox">
   <select class="dept-select" onchange="setDept(this.value)" id="deptSelect" style="display: none;"><option value="all">All Departments</option><option value="Administrative">Administrative</option><option value="Floor Support">Floor Support</option><option value="HR">HR</option><option value="HR Coordinator">HR Coordinator</option><option value="HR Manager">HR Manager</option><option value="Janitorial">Janitorial</option><option value="Maintenance">Maintenance</option><option value="Marketing">Marketing</option><option value="Operations Manager">Operations Manager</option><option value="President">President</option><option value="Process Tech">Process Tech</option><option value="Process Tech Supervisor">Process Tech Supervisor</option><option value="Production Manager">Production Manager</option><option value="Production off line">Production off line</option><option value="Project Manager">Project Manager</option><option value="Purchasing">Purchasing</option><option value="Quality Manager">Quality Manager</option><option value="Quality Tech">Quality Tech</option><option value="Shipping/Receiving">Shipping/Receiving</option><option value="Supervisor">Supervisor</option></select>
-  <select class="year-select" id="yearSelect" onchange="setYear(this.value)" style="display:none"><option value="2027">2027</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select>
+  <select class="year-select" id="yearSelect" onchange="setYear(this.value)" style="display: none;"><option value="2027">2027</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select>
 </div>
 
-<div class="stats-bar" id="statsBar" style="display:none"></div>
+<div class="stats-bar" id="statsBar" style="display: none;"><div class="stat"><div class="stat-dot" style="background:var(--text)"></div>Showing:<span class="stat-num">155</span></div><div class="stat"><div class="stat-dot" style="background:var(--s1)"></div>S1:<span class="stat-num">89</span></div><div class="stat"><div class="stat-dot" style="background:var(--s2)"></div>S2:<span class="stat-num">33</span></div><div class="stat"><div class="stat-dot" style="background:var(--s3)"></div>S3:<span class="stat-num">33</span></div><div class="stat"><div class="stat-dot" style="background:var(--green)"></div>Green:<span class="stat-num">2300</span></div><div class="stat"><div class="stat-dot" style="background:var(--yellow)"></div>Yellow:<span class="stat-num">56</span></div></div>
 
-<div id="legendBar" class="legend" style="display:none">
+<div id="legendBar" class="legend" style="display: none;">
   <strong style="font-size:11px;">CLICK CELLS:</strong>
   <div class="legend-item"><div class="legend-dot" style="background:var(--border)"></div>Blank</div>
   <div class="legend-item" style="color:var(--green)"><div class="legend-dot" style="background:var(--green-bg);border:1px solid var(--green-dim)"></div>Green = Certified</div>
@@ -3332,7 +3332,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="emp-actions"><button class="emp-status-btn" onclick="editEmployee(155)" style="background:var(--surface2);color:var(--muted);border:1px solid var(--border);font-weight:600">✏️ Edit</button><button class="emp-status-btn emp-inactive-btn" onclick="markInactive(155)">Mark Inactive</button></div>
     </div></div>
     </div></div>
-<div class="toast" id="toast"></div>
+<div class="toast show" id="toast">✅ Saved!</div>
 <div id="modalRoot"></div>
 
 <script>
@@ -4263,17 +4263,19 @@ function render(){
 // ═══════════════════════════════════════════
 function doLogout(){
   currentUser = null;
+  window._perms = null;
   document.getElementById('loginScreen').style.display = 'flex';
   document.getElementById('mainHeader').style.display = 'none';
   document.getElementById('appTabsEl').style.display = 'none';
   document.getElementById('content').style.display = 'none';
   document.getElementById('logoutBtn').style.display = 'none';
-  document.getElementById('pinInput').value = '';
-  document.getElementById('loginError').textContent = '';
+  const pin = document.getElementById('pinInput');
+  if(pin) pin.value = '';
+  const err = document.getElementById('loginError');
+  if(err) err.textContent = '';
 }
 
 function saveAsIndex(){
-  // Bake all current state (photos, training, attendance) into the HTML and download as index.html
   const html = document.documentElement.outerHTML;
   const blob = new Blob([html], {type:'text/html'});
   const a = document.createElement('a');
@@ -4281,7 +4283,39 @@ function saveAsIndex(){
   a.download = 'index.html';
   a.click();
   URL.revokeObjectURL(a.href);
-  toast('📤 Downloaded as index.html — drag it into your GitHub repo and commit!');
+
+  // Show step by step popup
+  document.getElementById('modalRoot').innerHTML = `
+    <div style="position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(0,0,0,.6)">
+        <div style="font-size:18px;font-weight:800;margin-bottom:6px">📤 Push to GitHub</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:20px">index.html downloaded! Now follow these steps:</div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+          <div style="display:flex;gap:12px;align-items:center;background:var(--surface2);padding:10px 14px;border-radius:8px">
+            <span style="font-size:22px">1️⃣</span>
+            <span style="font-size:13px">Open your <b>harmony-hr</b> folder<br><span style="font-size:11px;color:var(--muted)">Documents → GitHub → harmony-hr</span></span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;background:var(--surface2);padding:10px 14px;border-radius:8px">
+            <span style="font-size:22px">2️⃣</span>
+            <span style="font-size:13px">Copy <b>index.html</b> from Downloads into that folder, replace old one</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;background:var(--surface2);padding:10px 14px;border-radius:8px">
+            <span style="font-size:22px">3️⃣</span>
+            <span style="font-size:13px">Open <b>GitHub Desktop</b> → type anything in Summary → click <b>Commit to main</b></span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;background:var(--surface2);padding:10px 14px;border-radius:8px">
+            <span style="font-size:22px">4️⃣</span>
+            <span style="font-size:13px">Click <b>Repository</b> in the top menu → click <b>Push</b></span>
+          </div>
+        </div>
+
+        <button onclick="document.getElementById('modalRoot').innerHTML=''"
+          style="width:100%;padding:10px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer">
+          Got it!
+        </button>
+      </div>
+    </div>`;
 }
 
 function saveAll(){
@@ -4369,6 +4403,7 @@ function toast(msg){
   t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3500);
 }
+function showToast(msg){ toast(msg); }
 
 // ═══════════════════════════════════════════
 // INIT
